@@ -383,46 +383,46 @@
   </section>
 
   <!-- 수입 계산기 -->
-  <section class="py-20 px-6 section-bg2">
+  <section class="py-10 md:py-20 px-4 md:px-6 section-bg2">
     <div class="max-w-2xl mx-auto">
-      <div class="text-center mb-12">
+      <div class="text-center mb-6 md:mb-12">
         <p class="cinzel text-xs tracking-widest gold mb-2">INCOME CALCULATOR</p>
-        <h3 class="serif text-2xl font-black">예상 수입 계산기</h3>
-        <p class="text-gray-400 text-sm mt-2">슬라이더를 조절하면 자동으로 계산됩니다</p>
+        <h3 class="serif text-xl md:text-2xl font-black">예상 수입 계산기</h3>
+        <p class="text-gray-400 text-xs md:text-sm mt-1">슬라이더를 조절하면 자동으로 계산됩니다</p>
       </div>
-      <div class="space-y-4 mb-8">
+      <div class="space-y-3 mb-5">
         <!-- 주 출근 횟수 -->
-        <div class="card rounded-xl p-6">
-          <div class="flex justify-between items-center mb-4">
-            <p class="font-bold text-white">주 출근 횟수</p>
-            <p class="shine font-black text-2xl" id="daysLabel">4일</p>
+        <div class="card rounded-xl p-4 md:p-6">
+          <div class="flex justify-between items-center mb-3">
+            <p class="font-bold text-white text-sm md:text-base">주 출근 횟수</p>
+            <p class="shine font-black text-xl md:text-2xl" id="daysLabel">4일</p>
           </div>
           <input type="range" id="daysSlider" min="1" max="7" value="4" oninput="updateCalc()">
           <div class="flex justify-between text-xs text-gray-600 mt-2"><span>1일</span><span>7일</span></div>
         </div>
         <!-- 하루 업무시간 -->
-        <div class="card rounded-xl p-6">
-          <div class="flex justify-between items-center mb-4">
-            <p class="font-bold text-white">하루 업무시간</p>
-            <p class="shine font-black text-2xl" id="hoursLabel">6시간</p>
+        <div class="card rounded-xl p-4 md:p-6">
+          <div class="flex justify-between items-center mb-3">
+            <p class="font-bold text-white text-sm md:text-base">하루 업무시간</p>
+            <p class="shine font-black text-xl md:text-2xl" id="hoursLabel">6시간</p>
           </div>
           <input type="range" id="hoursSlider" min="1" max="15" value="6" oninput="updateCalc()">
           <div class="flex justify-between text-xs text-gray-600 mt-2"><span>1시간</span><span>15시간</span></div>
         </div>
         <!-- 팁 -->
-        <div class="card rounded-xl p-6">
-          <div class="flex justify-between items-center mb-4">
-            <p class="font-bold text-white">예상 팁 <span class="text-xs text-gray-500 font-normal">(하루 기준)</span></p>
-            <p class="shine font-black text-2xl" id="tipLabel">30만원</p>
+        <div class="card rounded-xl p-4 md:p-6">
+          <div class="flex justify-between items-center mb-3">
+            <p class="font-bold text-white text-sm md:text-base">예상 팁 <span class="text-xs text-gray-500 font-normal">(하루 기준)</span></p>
+            <p class="shine font-black text-xl md:text-2xl" id="tipLabel">30만원</p>
           </div>
           <input type="range" id="tipSlider" min="10" max="100" step="5" value="30" oninput="updateCalc()">
           <div class="flex justify-between text-xs text-gray-600 mt-2"><span>10만원</span><span>100만원</span></div>
         </div>
       </div>
       <!-- 결과 -->
-      <div class="result-box rounded-2xl p-8 text-center">
+      <div class="result-box rounded-2xl p-5 md:p-8 text-center">
         <p class="text-xs tracking-widest text-gray-400 mb-2 font-bold">예상 월 수입 (4주 기준)</p>
-        <p class="shine count-anim font-black mb-1" style="font-size:clamp(2rem,8vw,3.2rem); line-height:1.1;" id="monthlyResult">—</p>
+        <p class="shine count-anim font-black mb-1" style="font-size:clamp(1.6rem,7vw,3.2rem); line-height:1.1;" id="monthlyResult">—</p>
         <p class="text-gray-500 text-xs" id="monthlyNote"></p>
         <div class="divider my-6"><span class="text-xs text-gray-600">세부 내역</span></div>
         <div class="flex flex-col gap-2 text-center">
