@@ -413,7 +413,7 @@
       </div>
       <!-- 결과 -->
       <div class="result-box rounded-2xl p-8 text-center">
-        <p class="text-xs tracking-widest text-gray-400 mb-2 font-bold">예상 월 수입</p>
+        <p class="text-xs tracking-widest text-gray-400 mb-2 font-bold">예상 월 수입 (4주 기준)</p>
         <p class="shine count-anim font-black mb-1" style="font-size:clamp(2rem,8vw,3.2rem); line-height:1.1;" id="monthlyResult">—</p>
         <p class="text-gray-500 text-xs" id="monthlyNote"></p>
         <div class="divider my-6"><span class="text-xs text-gray-600">세부 내역</span></div>
@@ -682,7 +682,7 @@
 
       const daily = hours * 10 + tip;
       const weekly = daily * days;
-      const monthly = Math.round(weekly * 4.3);
+      const monthly = weekly * 4;
 
       document.getElementById('dailyResult').textContent = fmtMan(daily);
       document.getElementById('weeklyResult').textContent = fmtMan(weekly);
