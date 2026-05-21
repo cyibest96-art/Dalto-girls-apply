@@ -568,17 +568,57 @@
         <p class="text-gray-400 text-base mt-2">간단하게 남겨주시면 <span style="color:var(--gold-light)">순차적으로</span> 연락드립니다</p>
       </div>
 
-      <div class="flex flex-col gap-3 mb-8">
-        <button onclick="copyKakao(this)"
-           class="kakao-btn font-black text-base px-6 py-4 rounded flex items-center justify-center gap-3">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 3C6.48 3 2 6.69 2 11.25c0 2.92 1.88 5.49 4.72 6.97l-.96 3.56 4.12-2.72c.69.1 1.39.15 2.12.15 5.52 0 10-3.69 10-8.25S17.52 3 12 3z"/>
-          </svg>
-          카카오톡 ID 복사하기 (team.henry)
+      <div class="flex flex-col gap-4 mb-8">
+        <!-- 카카오톡 버튼 -->
+        <button onclick="copyKakao(this)" style="
+          background: linear-gradient(135deg, #F9E000 0%, #FEE500 50%, #F5D800 100%);
+          color: #191919;
+          border: none;
+          border-radius: 20px;
+          padding: 18px 24px;
+          font-weight: 900;
+          font-size: 16px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+          width: 100%;
+          box-shadow: 0 6px 24px rgba(254,229,0,0.35), 0 2px 8px rgba(0,0,0,0.3);
+          position: relative;
+          overflow: hidden;
+          transition: transform 0.15s, box-shadow 0.15s;
+        " onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 10px 32px rgba(254,229,0,0.45), 0 4px 12px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='';this.style.boxShadow='0 6px 24px rgba(254,229,0,0.35), 0 2px 8px rgba(0,0,0,0.3)'">
+          <span style="background:#191919; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#FEE500"><path d="M12 3C6.48 3 2 6.69 2 11.25c0 2.92 1.88 5.49 4.72 6.97l-.96 3.56 4.12-2.72c.69.1 1.39.15 2.12.15 5.52 0 10-3.69 10-8.25S17.52 3 12 3z"/></svg>
+          </span>
+          <span>
+            <span style="display:block; font-size:11px; font-weight:700; opacity:0.6; margin-bottom:1px;">KakaoTalk</span>
+            카카오톡 ID 복사하기 · team.henry
+          </span>
         </button>
-        <a href="tel:010-2343-2434"
-           class="cta-btn font-black text-base px-6 py-4 rounded flex items-center justify-center gap-2">
-          📞 010-2343-2434 전화하기
+
+        <!-- 전화 버튼 -->
+        <a href="tel:010-2343-2434" style="
+          background: linear-gradient(135deg, #A07830 0%, #C9A84C 40%, #E8C97A 65%, #C9A84C 100%);
+          color: #0C0A08;
+          border-radius: 20px;
+          padding: 18px 24px;
+          font-weight: 900;
+          font-size: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+          text-decoration: none;
+          box-shadow: 0 6px 24px rgba(201,168,76,0.4), 0 2px 8px rgba(0,0,0,0.3);
+          transition: transform 0.15s, box-shadow 0.15s;
+        " onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 10px 32px rgba(201,168,76,0.5), 0 4px 12px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='';this.style.boxShadow='0 6px 24px rgba(201,168,76,0.4), 0 2px 8px rgba(0,0,0,0.3)'">
+          <span style="background:rgba(0,0,0,0.15); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:18px;">📞</span>
+          <span>
+            <span style="display:block; font-size:11px; font-weight:700; opacity:0.6; margin-bottom:1px;">24시간 연결 가능</span>
+            010-2343-2434 전화하기
+          </span>
         </a>
       </div>
 
