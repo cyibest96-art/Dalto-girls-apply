@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dalto-girls-apply.vercel.app/sitemap.xml
