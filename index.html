@@ -234,18 +234,85 @@
 </head>
 <body>
 
-  <!-- 오른쪽 플로팅 카드 -->
+  <!-- 말풍선 플로팅 -->
   <style>
-    @keyframes floatPulse {
-      0%, 100% { box-shadow: -6px 0 32px rgba(201,168,76,0.5), 0 0 0 0 rgba(201,168,76,0.4); }
-      50% { box-shadow: -6px 0 48px rgba(201,168,76,0.8), 0 0 24px 6px rgba(201,168,76,0.25); }
+    @keyframes slideInBubble {
+      from { transform: translateX(130%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
     }
-    .float-card { animation: floatPulse 2.4s ease-in-out infinite; }
-    .float-card:hover { transform: translateY(-50%) scale(1.05) !important; transition: transform 0.2s; }
+    @keyframes bubbleGlow {
+      0%, 100% { box-shadow: 0 8px 32px rgba(201,168,76,0.45); }
+      50% { box-shadow: 0 8px 52px rgba(201,168,76,0.8); }
+    }
+    #speechBubble {
+      position: fixed;
+      right: 16px;
+      bottom: 90px;
+      z-index: 998;
+      display: none;
+    }
+    #speechBubble.show {
+      display: block;
+      animation: slideInBubble 0.55s cubic-bezier(0.34,1.56,0.64,1) forwards;
+    }
+    #speechBubble.show .bubble-inner {
+      animation: bubbleGlow 2.5s ease-in-out infinite 0.6s;
+    }
+    .bubble-inner {
+      background: linear-gradient(135deg, #8C6820, #C9A84C 45%, #E8C97A 70%, #C9A84C);
+      border-radius: 20px;
+      padding: 18px 20px 22px;
+      position: relative;
+      min-width: 150px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      border: 1px solid rgba(255,230,120,0.5);
+    }
+    .bubble-inner::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      right: 22px;
+      width: 0; height: 0;
+      border-left: 10px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 13px solid #C9A84C;
+    }
+    .bubble-close {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 24px; height: 24px;
+      background: #333;
+      border: 1px solid rgba(201,168,76,0.5);
+      border-radius: 50%;
+      color: #aaa;
+      font-size: 11px;
+      font-weight: 900;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 1;
+    }
   </style>
-  <a href="nightjob-guide.html" class="float-card" style="position:fixed; right:0; top:50%; transform:translateY(-50%); z-index:998; background:linear-gradient(180deg,#7A5C20,#A07830,#C9A84C,#E8C97A,#C9A84C,#A07830,#7A5C20); color:#0C0A08; font-weight:900; font-size:13px; writing-mode:vertical-rl; text-orientation:mixed; padding:28px 14px; border-radius:16px 0 0 16px; letter-spacing:4px; text-decoration:none; line-height:1.5; white-space:nowrap; border-top:1px solid rgba(255,220,100,0.4); border-bottom:1px solid rgba(255,220,100,0.4); border-left:1px solid rgba(255,220,100,0.4);">
-    📖&nbsp;시작 전 꼭 읽어보세요
-  </a>
+
+  <div id="speechBubble">
+    <div style="position:relative;">
+      <button class="bubble-close" onclick="document.getElementById('speechBubble').style.display='none'">✕</button>
+      <a href="nightjob-guide.html" class="bubble-inner">
+        <p style="font-size:24px; margin-bottom:6px;">📖</p>
+        <p style="font-size:13px; font-weight:900; color:#0C0A08; line-height:1.5; margin-bottom:4px;">시작 전<br>꼭 읽어보세요</p>
+        <p style="font-size:12px; color:#5C3D10; font-weight:700;">자세히 보기 →</p>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    setTimeout(function() {
+      var b = document.getElementById('speechBubble');
+      if (b) b.classList.add('show');
+    }, 3000);
+  </script>
 
   <!-- 상단 고정 연락 바 -->
   <div class="top-bar text-black text-center py-2 text-xs font-bold sticky top-0 z-50 tracking-wide">
